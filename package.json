@@ -4,7 +4,7 @@
   "description": "Test automation sample, trying to integrate more functionalities to it.",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "npx playwright test --ui"
   },
   "keywords": [
     "playwright",
