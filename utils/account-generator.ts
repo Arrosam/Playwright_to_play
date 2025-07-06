@@ -7,8 +7,9 @@ export function generateEmailAddress(
   const timestamp = Date.now();
   return `${formattedFirstName}+${timestamp}@${domain}`;
 }
+
 export function generatePassword(
-  length: number = 12,
+  length: number = randomInt(8, 16), // Default length between 8 and 16
   includedSpecialChars: string = '!@#$%^&*()_+[]{}|;:,.<>?~`',// Default special characters
   includeUpperCase: boolean = true,
   includeLowerCase: boolean = true,
@@ -46,4 +47,10 @@ export function generatePassword(
   }
 
   return password;
+}
+
+export function generatePsudoName(
+  length: number = randomInt(3, 8)
+): string {
+  return generatePassword(length, '', true, true, false);
 }
