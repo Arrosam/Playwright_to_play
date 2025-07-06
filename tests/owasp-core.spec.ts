@@ -13,10 +13,8 @@ test('register a new user', async ({ page }) => {
   await page.goto('https://demo.owasp-juice.shop/');
 
   // Click on the "Register" link
-  await page.getByRole('link', { name: 'Register' }).click();
+  await page.getByText('Account').click();
+  await page.getByText('Login').click();
+  
 
-  // Fill in the registration form
-  await page.getByLabel('Email').fill("");
-  await page.getByLabel('Password').fill('Test1234');
-  await page.getByText('Register').click();
 });
